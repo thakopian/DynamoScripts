@@ -1,0 +1,407 @@
+{
+  "Uuid": "28ec4069-4e64-4d4d-af71-43ca3ce8ffb0",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "05.GRIDS_FROM_CODE_03",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "Autodesk": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Points.ByCoordinates": {
+        "Key": "Geometry.Points",
+        "Value": "LunchBox.dll"
+      },
+      "Points": {
+        "Key": "Geometry.Points",
+        "Value": "LunchBox.dll"
+      },
+      "Autodesk.NurbsSurface.ByPoints": {
+        "Key": "Autodesk.DesignScript.Geometry.NurbsSurface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.NurbsSurface": {
+        "Key": "Autodesk.DesignScript.Geometry.NurbsSurface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.DesignScript.Geometry.NurbsSurface.ByPoints": {
+        "Key": "Autodesk.DesignScript.Geometry.NurbsSurface",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.Point.ByCoordinates": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.DesignScript.Geometry.Point.ByCoordinates": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      },
+      "Autodesk.DesignScript.Geometry.Point": {
+        "Key": "Autodesk.DesignScript.Geometry.Point",
+        "Value": "ProtoGeometry.dll"
+      }
+    }
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "Autodesk.Point.ByCoordinates(1..30..10,70,0);\nAutodesk.Point.ByCoordinates(1..30..10,-10,0);",
+      "Id": "4e245526495546ae867aab0f0cf7757f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fff1bbf16e884b89a5116dcc00d70e6c",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "519d2d867d8a42458f4acff71e464d20",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "Autodesk.Point.ByCoordinates(-5,1..60..20,0);\nAutodesk.Point.ByCoordinates(45,1..60..20,0);",
+      "Id": "4aec4003a2f549ad936fdf7ab4ea7d84",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4eeaa11fed124c1abf4390f2b29a8595",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6cb3884e10c748359e2315a5c5c654d9",
+          "Name": "",
+          "Description": "Value of expression at line 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Grid.ByStartPointEndPoint@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point",
+      "Id": "693db4fb17594575bc046c7433b938b3",
+      "Inputs": [
+        {
+          "Id": "7a5ba6dfa72f40a387caf33995630190",
+          "Name": "start",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "08e79ff105d747c9856bd9ca88fc6488",
+          "Name": "end",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5781d3678b104568a0fc779fcee00f12",
+          "Name": "Grid",
+          "Description": "Grid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a Revit Grid Element in a project between two end points\n\nGrid.ByStartPointEndPoint (start: Point, end: Point): Grid"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Grid.ByStartPointEndPoint@Autodesk.DesignScript.Geometry.Point,Autodesk.DesignScript.Geometry.Point",
+      "Id": "1bc28ca412134b3882deba8df40693bd",
+      "Inputs": [
+        {
+          "Id": "fb7e7e9e09c14b5ca5e30d41bfd99167",
+          "Name": "start",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "02b99bfd4c4d4b8abc6314c5023b094a",
+          "Name": "end",
+          "Description": "Point",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "839f230c7c5d4424a25e000cdad3d082",
+          "Name": "Grid",
+          "Description": "Grid",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a Revit Grid Element in a project between two end points\n\nGrid.ByStartPointEndPoint (start: Point, end: Point): Grid"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "5114843a7c9045bba1ed374ca357ccd4",
+      "Inputs": [
+        {
+          "Id": "124dd1072b7a4f31b565911268418493",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a6d6b9b7b783460e9651a54e5143a42e",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "7d66208754eb4bc88e1b96e3187700d3",
+      "Inputs": [
+        {
+          "Id": "4fdb574cb1214cca92ace09f35f3ba75",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "70e05e02c916484c8bbdf4c75443892f",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "fff1bbf16e884b89a5116dcc00d70e6c",
+      "End": "7a5ba6dfa72f40a387caf33995630190",
+      "Id": "1263dcb9cf274d43b5b2ab6b369323e6"
+    },
+    {
+      "Start": "519d2d867d8a42458f4acff71e464d20",
+      "End": "08e79ff105d747c9856bd9ca88fc6488",
+      "Id": "a4e70668f45342dea33e668361b17c71"
+    },
+    {
+      "Start": "4eeaa11fed124c1abf4390f2b29a8595",
+      "End": "fb7e7e9e09c14b5ca5e30d41bfd99167",
+      "Id": "eab6387de92841d4abd36234e1618e5c"
+    },
+    {
+      "Start": "6cb3884e10c748359e2315a5c5c654d9",
+      "End": "02b99bfd4c4d4b8abc6314c5023b094a",
+      "Id": "a1308d7419a44521b87ff3c633a2717a"
+    },
+    {
+      "Start": "5781d3678b104568a0fc779fcee00f12",
+      "End": "124dd1072b7a4f31b565911268418493",
+      "Id": "187bacfb566e424ba4629571a3c11fad"
+    },
+    {
+      "Start": "839f230c7c5d4424a25e000cdad3d082",
+      "End": "4fdb574cb1214cca92ace09f35f3ba75",
+      "Id": "23ed25a1f67847338cc6b32b3a414825"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -21.518144556092444,
+      "EyeY": 84.00518485276065,
+      "EyeZ": 28.984964143045133,
+      "LookX": 20.227601066168596,
+      "LookY": -66.420739837428428,
+      "LookZ": -45.0307976933682,
+      "UpX": 0.26882267318805747,
+      "UpY": 0.75470958022277346,
+      "UpZ": -0.5984545261755444
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "4e245526495546ae867aab0f0cf7757f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 360.766280682141,
+        "Y": 306.83615991371084
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "4aec4003a2f549ad936fdf7ab4ea7d84",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 368.39783439471927,
+        "Y": 475.93606064179357
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Grid.ByStartPointEndPoint",
+        "Id": "693db4fb17594575bc046c7433b938b3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 854.29532730610276,
+        "Y": 299.79831458775425
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Grid.ByStartPointEndPoint",
+        "Id": "1bc28ca412134b3882deba8df40693bd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 858.80893761874734,
+        "Y": 467.46694972999558
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "5114843a7c9045bba1ed374ca357ccd4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1110.6709387389776,
+        "Y": 299.27415429266995
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "7d66208754eb4bc88e1b96e3187700d3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1115.2572074368966,
+        "Y": 467.33374755292374
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "ca6a230077b54c9f9320184d84d2e12b",
+        "Title": "INPUT - Points with ranges",
+        "Nodes": [
+          "4e245526495546ae867aab0f0cf7757f",
+          "4aec4003a2f549ad936fdf7ab4ea7d84"
+        ],
+        "Left": 350.766280682141,
+        "Top": 253.83615991371084,
+        "Width": 428.6315537125783,
+        "Height": 325.09990072808273,
+        "FontSize": 36.0,
+        "InitialTop": 306.83615991371084,
+        "InitialHeight": 302.09990072808273,
+        "TextblockHeight": 43.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "11b58116c7bd47aabcecbb87f4000c5b",
+        "Title": "OUTPUT - Grid lines",
+        "Nodes": [
+          "693db4fb17594575bc046c7433b938b3",
+          "1bc28ca412134b3882deba8df40693bd",
+          "5114843a7c9045bba1ed374ca357ccd4",
+          "7d66208754eb4bc88e1b96e3187700d3"
+        ],
+        "Left": 844.29532730610276,
+        "Top": 246.27415429266995,
+        "Width": 358.96188013079382,
+        "Height": 340.19279543732563,
+        "FontSize": 36.0,
+        "InitialTop": 299.27415429266995,
+        "InitialHeight": 317.19279543732563,
+        "TextblockHeight": 43.0,
+        "Background": "#FFFF7BAC"
+      }
+    ],
+    "X": -274.68477166121073,
+    "Y": -109.96348479213691,
+    "Zoom": 0.955424024134065
+  }
+}

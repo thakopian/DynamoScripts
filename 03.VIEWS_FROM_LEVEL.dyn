@@ -1,0 +1,576 @@
+{
+  "Uuid": "8e8cac5b-ba7e-48da-b10d-5d83147477c7",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "03.VIEWS_FROM_LEVEL",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Views.CeilingPlanView.ByLevel@Revit.Elements.Level",
+      "Id": "aa77521e5e614f36b202518f177059d8",
+      "Inputs": [
+        {
+          "Id": "eddd217893a54b74a04bfa522c8fefb2",
+          "Name": "level",
+          "Description": "Level",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "55aa08f4417a45348f0f0b2d01e9bd3c",
+          "Name": "CeilingPlanView",
+          "Description": "CeilingPlanView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a Revit Floor Plan at a given Level\n\nCeilingPlanView.ByLevel (level: Level): CeilingPlanView"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Views.FloorPlanView.ByLevel@Revit.Elements.Level",
+      "Id": "42de14a9137c4011988cf2776b844cf8",
+      "Inputs": [
+        {
+          "Id": "59d30222f3b04c7b8fe66b150a63fa9c",
+          "Name": "level",
+          "Description": "Level",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "22dd73fb1eb942fe9c3b450431b1a271",
+          "Name": "FloorPlanView",
+          "Description": "FloorPlanView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a Revit Floor Plan at a given Level\n\nFloorPlanView.ByLevel (level: Level): FloorPlanView"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "88d5f3e899824802868e5a12164e4123",
+      "Inputs": [
+        {
+          "Id": "4777653f07464aafaa7ac611456a312e",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7f844f01c9d6448eb41b18df59320502",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0d480a7e01e142adb26db616b3982d40",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "659bc41543a94fffaab026fbce4225cf",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "014d2bacd57e45a68c7ddd072fcc6dd9",
+      "Inputs": [
+        {
+          "Id": "ff2c2bc1649c45748026082e69b34fa7",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1e22070b2d28424bb87efeeb3b8a299c",
+          "Name": "parameterName",
+          "Description": "The name of the parameter to set.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9d97700c74284481bb27681de760612d",
+          "Name": "value",
+          "Description": "The value.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7f0faf3db953422e9b42d545bc2ee851",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Set one of the element's parameters.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "View Template",
+      "Id": "8954e2277e454d6d9fd789456e1be836",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d92b7998f73646de91c77686a8add455",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "archilabUI.ViewTemplatesUi, archilabUI",
+      "SelectedIndex": 3,
+      "NodeType": "ExtensionNode",
+      "Id": "eabe8f7f88a14e248e8b372ec53ce002",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a658313af7ae41a6a68f318809aee26a",
+          "Name": "viewTemplate",
+          "Description": "The selected viewTemplate",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Retrieve all available View Templates (except 3D view based due to Dynamo limitation)."
+    },
+    {
+      "ConcreteType": "archilabUI.ViewTemplatesUi, archilabUI",
+      "SelectedIndex": 1,
+      "NodeType": "ExtensionNode",
+      "Id": "5b52b4f4742f40b1b920384ba6608869",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4f1e4d2c2650405fb71394aee1c043e3",
+          "Name": "viewTemplate",
+          "Description": "The selected viewTemplate",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Retrieve all available View Templates (except 3D view based due to Dynamo limitation)."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "View Template",
+      "Id": "b73c6b28ead14cad844e2afbc857bc54",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "cf5b4607568e4a8d8d8e75a078deaadb",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 248,
+      "NodeType": "ExtensionNode",
+      "Id": "145782bdf22e4b5d8417dd23599ca9ee",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "96079b2943764d46b2f0b9dd8cc4cbf1",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "231513f8d28f41ee8f6f4e64871b75e7",
+      "Inputs": [
+        {
+          "Id": "f8a4602b1f7f4c5290be1beb357d57c5",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2259ed051b50461989c0e92d8ce98950",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "678fbc02691a4a63a031824b8076dc80",
+      "Inputs": [
+        {
+          "Id": "63fb1da924674073a3014f0f2371d9b2",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7f8bc366dd9044a7a144d7b146e8cdfe",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "55aa08f4417a45348f0f0b2d01e9bd3c",
+      "End": "4777653f07464aafaa7ac611456a312e",
+      "Id": "305d86a308a1415da024e8d842bb37a0"
+    },
+    {
+      "Start": "22dd73fb1eb942fe9c3b450431b1a271",
+      "End": "ff2c2bc1649c45748026082e69b34fa7",
+      "Id": "7af07060f5b94b85a64545cabd75b0ea"
+    },
+    {
+      "Start": "d92b7998f73646de91c77686a8add455",
+      "End": "7f844f01c9d6448eb41b18df59320502",
+      "Id": "859b0b6eaf174bfc848731d422d89609"
+    },
+    {
+      "Start": "a658313af7ae41a6a68f318809aee26a",
+      "End": "9d97700c74284481bb27681de760612d",
+      "Id": "c0a28c56d80b420088b20b50897e591b"
+    },
+    {
+      "Start": "4f1e4d2c2650405fb71394aee1c043e3",
+      "End": "0d480a7e01e142adb26db616b3982d40",
+      "Id": "de111be8a43140019194911169df4352"
+    },
+    {
+      "Start": "cf5b4607568e4a8d8d8e75a078deaadb",
+      "End": "1e22070b2d28424bb87efeeb3b8a299c",
+      "Id": "d33bf5b9be50489295c7485bdb0beed7"
+    },
+    {
+      "Start": "96079b2943764d46b2f0b9dd8cc4cbf1",
+      "End": "f8a4602b1f7f4c5290be1beb357d57c5",
+      "Id": "283d62f5a3734e3583efa538d34fbdcb"
+    },
+    {
+      "Start": "2259ed051b50461989c0e92d8ce98950",
+      "End": "63fb1da924674073a3014f0f2371d9b2",
+      "Id": "48e3fc323f614947899be6f9fb461a9c"
+    },
+    {
+      "Start": "2259ed051b50461989c0e92d8ce98950",
+      "End": "eddd217893a54b74a04bfa522c8fefb2",
+      "Id": "d89b2a1f375c418eb0559d4a57eeee4b"
+    },
+    {
+      "Start": "2259ed051b50461989c0e92d8ce98950",
+      "End": "59d30222f3b04c7b8fe66b150a63fa9c",
+      "Id": "3c1b0ca3c17c48f39a2df4624bc82a14"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "CeilingPlanView.ByLevel",
+        "Id": "aa77521e5e614f36b202518f177059d8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 965.44613897575618,
+        "Y": 189.14493749010907
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "FloorPlanView.ByLevel",
+        "Id": "42de14a9137c4011988cf2776b844cf8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 969.55561409025859,
+        "Y": 357.38091264674739
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
+        "Id": "88d5f3e899824802868e5a12164e4123",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1645.8948749016236,
+        "Y": 181.95092924020389
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
+        "Id": "014d2bacd57e45a68c7ddd072fcc6dd9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1650.8452153306553,
+        "Y": 372.63222173782111
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "8954e2277e454d6d9fd789456e1be836",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1379.9592801920758,
+        "Y": 257.9979954585001
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "View Templates",
+        "Id": "eabe8f7f88a14e248e8b372ec53ce002",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1247.2317067881136,
+        "Y": 434.90951613385454
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "View Templates",
+        "Id": "5b52b4f4742f40b1b920384ba6608869",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1294.9990586552678,
+        "Y": 137.220907586377
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "b73c6b28ead14cad844e2afbc857bc54",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1377.6347168256609,
+        "Y": 333.09211984899258
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "145782bdf22e4b5d8417dd23599ca9ee",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 509.16326671220634,
+        "Y": 275.11113308921188
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "231513f8d28f41ee8f6f4e64871b75e7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 704.22719641568574,
+        "Y": 274.45758076827229
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "678fbc02691a4a63a031824b8076dc80",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 983.77768027264813,
+        "Y": 463.2188342846228
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "74a6fef12fe046b2b9cecf2c9854d20f",
+        "Title": "INPUT - Get levels and sort out the Ceiling and Floor plans by level",
+        "Nodes": [
+          "aa77521e5e614f36b202518f177059d8",
+          "42de14a9137c4011988cf2776b844cf8",
+          "145782bdf22e4b5d8417dd23599ca9ee",
+          "231513f8d28f41ee8f6f4e64871b75e7",
+          "678fbc02691a4a63a031824b8076dc80"
+        ],
+        "Left": 499.16326671220634,
+        "Top": 93.144937490109072,
+        "Width": 718.28287226355,
+        "Height": 464.07389679451376,
+        "FontSize": 36.0,
+        "InitialTop": 189.14493749010907,
+        "InitialHeight": 398.07389679451376,
+        "TextblockHeight": 86.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "7ddc516270ce4261831ac4429e4afe49",
+        "Title": "PROCESS - Specify values and parameters",
+        "Nodes": [
+          "8954e2277e454d6d9fd789456e1be836",
+          "eabe8f7f88a14e248e8b372ec53ce002",
+          "5b52b4f4742f40b1b920384ba6608869",
+          "b73c6b28ead14cad844e2afbc857bc54"
+        ],
+        "Left": 1237.2317067881136,
+        "Top": 41.220907586376995,
+        "Width": 371.0,
+        "Height": 486.68860854747754,
+        "FontSize": 36.0,
+        "InitialTop": 137.220907586377,
+        "InitialHeight": 420.68860854747754,
+        "TextblockHeight": 86.0,
+        "Background": "#FFE8F7AD"
+      },
+      {
+        "Id": "36d735e606684fa6ad0863846294548f",
+        "Title": "OUTPUT - Levels with Templates",
+        "Nodes": [
+          "88d5f3e899824802868e5a12164e4123",
+          "014d2bacd57e45a68c7ddd072fcc6dd9"
+        ],
+        "Left": 1635.8948749016236,
+        "Top": 85.950929240203891,
+        "Width": 294.95034042903171,
+        "Height": 431.68129249761722,
+        "FontSize": 36.0,
+        "InitialTop": 181.95092924020389,
+        "InitialHeight": 365.68129249761722,
+        "TextblockHeight": 86.0,
+        "Background": "#FFFF7BAC"
+      }
+    ],
+    "X": -346.95854985513091,
+    "Y": 91.668193020705985,
+    "Zoom": 0.76274743624947328
+  }
+}
