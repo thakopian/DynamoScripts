@@ -1,0 +1,292 @@
+{
+  "Uuid": "67506ea0-d884-4342-8837-4b1064fdd78c",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "DYN_AU-EX-3-WRITE-TO-REVIT-ELEMENTS",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Enable Python support and load DesignScript library\r\nimport clr\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\nclr.AddReference('RevitNodes')\r\nfrom Revit.Elements import *\r\n\r\nfamtype = IN[0]\r\npbc = Point.ByCoordinates(0,0,0)\r\noutput = []\r\n\r\nfor x in range(0, 10000, 2000):\r\n\tfor y in range(0, 10000, 2000):\r\n\t\tfor z in range(0, 10000, 2000):\r\n\t\t\tpbc = Point.ByCoordinates(x,y,z)\r\n\t\t\tcol = FamilyInstance.ByPoint(famtype,pbc)\r\n\t\t\toutput.append(col)\r\n\r\nOUT = output",
+      "VariableInputPorts": true,
+      "Id": "af9fc80efb704202b8081df5c267557b",
+      "Inputs": [
+        {
+          "Id": "ba61dd382b25462da54a47d72db0b586",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "598fc754f4584d3ea7796dd02d35dbc3",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Geometry",
+      "Id": "23133748ec6a468d852ff93eab577ff3",
+      "Inputs": [
+        {
+          "Id": "cdacfeeee9b349789204ee2724abccf6",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "22a0198039e44f138c1a947b9697f676",
+          "Name": "var[]",
+          "Description": "var[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Get all of the Geometry associated with this object\n\nElement.Geometry ( ): var[]"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.FamilyTypes, DSRevitNodesUI",
+      "SelectedIndex": 71,
+      "SelectedString": "RPC Male:Alex",
+      "NodeType": "ExtensionNode",
+      "Id": "bf782a944a6d4ad39cc5864bb725e675",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6f7a87ee5fc84c42b46249e635398ca0",
+          "Name": "Family Type",
+          "Description": "The selected Family Type",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All family types available in the document."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.FamilyInstance.ByPoint@Revit.Elements.FamilyType,Autodesk.DesignScript.Geometry.Point",
+      "Id": "df36b99c0f8a4392bdc26ffd631495dd",
+      "Inputs": [
+        {
+          "Id": "10bb9e96717c46b8a18dd0b73e24119b",
+          "Name": "familyType",
+          "Description": "Family Type. Also called Family Symbol.\n\nFamilyType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "642fe6bc95f14c50a594e9d536093b48",
+          "Name": "point",
+          "Description": "Point in meters.\n\nPoint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6c21b4271b514a6bb544322a30e086f5",
+          "Name": "FamilyInstance",
+          "Description": "FamilyInstance",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Place a Revit FamilyInstance given the FamilyType (also known as the FamilySymbol in the Revit API) and its coordinates in world space\n\nFamilyInstance.ByPoint (familyType: FamilyType, point: Point): FamilyInstance"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Family.ByName@string",
+      "Id": "3c90a26abc454438bf5c043d5a0f49e5",
+      "Inputs": [
+        {
+          "Id": "9b70570fe1af4ea4a17bb1e42ebe1c89",
+          "Name": "name",
+          "Description": "The name of the family in the current document\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0277fee755ee4b9b9029df8a32166d42",
+          "Name": "Family",
+          "Description": "Family",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Obtain a Family from the current document given it's name\n\nFamily.ByName (name: string): Family"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.StringInput, CoreNodeModels",
+      "NodeType": "StringInputNode",
+      "InputValue": "RPC Male",
+      "Id": "b6d25b9bd664413fbafe60f7eff3b0a5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0f552c5f5eab42cb9dd623bfd169b3fd",
+          "Name": "",
+          "Description": "String",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a string."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "598fc754f4584d3ea7796dd02d35dbc3",
+      "End": "cdacfeeee9b349789204ee2724abccf6",
+      "Id": "87fdf47b354941e6b265439aca84cedf"
+    },
+    {
+      "Start": "6f7a87ee5fc84c42b46249e635398ca0",
+      "End": "ba61dd382b25462da54a47d72db0b586",
+      "Id": "b3f3c4f3a5f2457fb27f9269afaaf9f8"
+    },
+    {
+      "Start": "0f552c5f5eab42cb9dd623bfd169b3fd",
+      "End": "9b70570fe1af4ea4a17bb1e42ebe1c89",
+      "Id": "70b3d632a2ab4a5bb8e981daff580528"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": 5385.585458491455,
+      "EyeY": 4229.4409575967265,
+      "EyeZ": 6841.4334029724878,
+      "LookX": -5360.6174761300945,
+      "LookY": -4148.1843567074147,
+      "LookZ": -6908.2193341074426,
+      "UpX": -0.1379070651049604,
+      "UpY": 0.97437006478524779,
+      "UpZ": -0.17772061851275026
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "PS - XYZ matrix Family PY",
+        "Id": "af9fc80efb704202b8081df5c267557b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3619.6869324685294,
+        "Y": -261.92912204213269
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Geometry",
+        "Id": "23133748ec6a468d852ff93eab577ff3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3876.4233047350676,
+        "Y": -264.332387487612
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Family Types",
+        "Id": "bf782a944a6d4ad39cc5864bb725e675",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3326.0713192776807,
+        "Y": -267.89951824568305
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "FamilyInstance.ByPoint",
+        "Id": "df36b99c0f8a4392bdc26ffd631495dd",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3585.4576920800937,
+        "Y": -92.389005241026041
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Family.ByName",
+        "Id": "3c90a26abc454438bf5c043d5a0f49e5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3697.6251510578204,
+        "Y": 65.4248809286924
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String",
+        "Id": "b6d25b9bd664413fbafe60f7eff3b0a5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 3550.4802335829486,
+        "Y": 72.558449552074876
+      }
+    ],
+    "Annotations": [],
+    "X": -2728.5409742200018,
+    "Y": 477.00139657650283,
+    "Zoom": 0.90462527559690731
+  }
+}

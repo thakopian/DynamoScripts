@@ -1,0 +1,222 @@
+{
+  "Uuid": "67506ea0-d884-4342-8837-4b1064fdd78c",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "DYN_archilab_floor_area",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "ca67720f-9719-431b-9d33-fddf2a96285b",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "afb01b47b886442b96a75a9e32192d8e",
+      "Inputs": [
+        {
+          "Id": "c6ecc6b9f7da40c5ae66edc0451d7856",
+          "Name": "_floor",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "100460349783475cb23e17d9eb131bf3",
+          "Name": "_area",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "This node return floor area. "
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 209,
+      "SelectedString": "OST_Floors",
+      "NodeType": "ExtensionNode",
+      "Id": "512d709ae4d84613985f99c866c38ffa",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "08b5fd75848c4d2e8767bde1741da5dc",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "655163e1178647e0aa1f918b39c4b6aa",
+      "Inputs": [
+        {
+          "Id": "45cd3090195a429bafbba68202c11782",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9e83bff4e8634beb9e2b04ce9f3501d3",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "fe8c6131244b4fc7bc4a6dad2827032e",
+      "Inputs": [
+        {
+          "Id": "60db5f9c66b3481d991be2a0034323d9",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "51ff0a037d4b495386839725c2731999",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "100460349783475cb23e17d9eb131bf3",
+      "End": "60db5f9c66b3481d991be2a0034323d9",
+      "Id": "2f608c95b1604657a4d236e489849f0f"
+    },
+    {
+      "Start": "08b5fd75848c4d2e8767bde1741da5dc",
+      "End": "45cd3090195a429bafbba68202c11782",
+      "Id": "fb1ec70b1b1f4b5096f5b63904308013"
+    },
+    {
+      "Start": "9e83bff4e8634beb9e2b04ce9f3501d3",
+      "End": "c6ecc6b9f7da40c5ae66edc0451d7856",
+      "Id": "b28a9416c5ea47f7bed912757d6564ed"
+    }
+  ],
+  "Dependencies": [
+    "ca67720f-9719-431b-9d33-fddf2a96285b"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "archi-lab.net",
+      "Version": "2021.25.14",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "afb01b47b886442b96a75a9e32192d8e"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.3.0.5885",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Floor.Area",
+        "Id": "afb01b47b886442b96a75a9e32192d8e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 761.5,
+        "Y": 530.5
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "512d709ae4d84613985f99c866c38ffa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 324.0,
+        "Y": 529.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "655163e1178647e0aa1f918b39c4b6aa",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 531.0,
+        "Y": 531.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Watch",
+        "Id": "fe8c6131244b4fc7bc4a6dad2827032e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1033.0,
+        "Y": 526.0
+      }
+    ],
+    "Annotations": [],
+    "X": -186.0,
+    "Y": -173.0,
+    "Zoom": 1.0
+  }
+}
